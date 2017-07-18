@@ -1,3 +1,26 @@
 <h1>Indeks ksiazek</h1>
 
 <p>Tu bedzie lista dostepnych ksiazek</p>
+
+<%= link_to 'Dodaj książkę', '#' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, '#' %></td>
+        <td><%= book.author %></td>
+        <td><%= book.genre %></td>
+        <td><%= book.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
