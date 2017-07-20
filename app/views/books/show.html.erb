@@ -6,6 +6,11 @@
         <h3><%= @book.author %></h3>
         <p><%= @book.genre %></p>
         <p><%= @book.description %></p>
+        <% if @book.ordered? %>
+          <p><%= link_to "Return", "#", class: "btn btn-primary" %></p>
+        <% else %>
+          <p><%= link_to "Order", book_orders_path(@book), method: :post, class: "btn btn-primary" %></p>
+        <% end %>
       </div>
       <div class="col-md-4">
         <h1>Miejsce na zdjecie</h1>
@@ -13,3 +18,29 @@
     </div>
   </div>
 </div>
+
+<h3>History</h3>
+<table class="table">
+  <tr>
+    <thead>
+      <th>User</th>
+      <th>Ordered at</th>
+      <th>Returned at</th>
+    </thead>
+  </tr>
+  <tbody>
+    <% if @orders.present? %>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.user.name %></td>
+          <td><%= order.created_at %></td>
+          <td><%= order.returned_at || "-" %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td class="text-center" colspan="3">History not found.</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

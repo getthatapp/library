@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all.order('created_at DESC')
+    @books = Book.all.order(created_at: :DESC)
   end
 
   def new
@@ -17,7 +17,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    book
+    @orders = book.orders
   end
 
   private
