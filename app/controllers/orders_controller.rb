@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def create
-    book.orders.create(user: User.first)
-    redirect_to book_path(book), notice: "Book was successfuly ordered"
+    if book.ordered?
+      redirect_to book_path(book), danger: "You can't order this book. It's already ordered!"
+    else
+      book.orders.create(user: User.first)
+      redirect_to book_path(book), success: "Book was successfuly ordered"
+    end
   end
 
   private
@@ -9,4 +13,5 @@ class OrdersController < ApplicationController
   def book
     @book ||= Book.find(params[:book_id])
   end
+
 end

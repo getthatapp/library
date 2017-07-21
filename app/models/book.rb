@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   validates :title, :author, :description, presence: true
   validates :genre, presence: true, allow_blank: true

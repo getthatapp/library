@@ -7,7 +7,7 @@
         <p><%= @book.genre %></p>
         <p><%= @book.description %></p>
         <% if @book.ordered? %>
-          <p><%= link_to "Return", book_return_path(@book), class: "btn btn-warning btn-block" %></p>
+          <p><%= link_to "Return", book_return_path(@book), method: :put, class: "btn btn-warning btn-block" %></p>
         <% else %>
           <p><%= link_to "Order", book_orders_path(@book), method: :post, class: "btn btn-success btn-block" %></p>
         <% end %>
