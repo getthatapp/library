@@ -3,9 +3,14 @@
     <%= link_to "LIBRARY APP", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign up", '#' %></li> | 
-        <li><%= link_to "Sign in", '#' %></li>
+      <% if current_user %>
+          Signed in as <strong><%= current_user.name %></strong>!
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        <% else %>
+          <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
+        <% end %>
       </ul>
     </nav> 
   </div>
 </header>
+
