@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'faker', '~> 1.8', '>= 1.8.4'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'paperclip', '~> 5.1'
+gem 'aws-sdk', '~> 2.10', '>= 2.10.15'
 
 gem 'pry'
 # Use CoffeeScript for .coffee assets and views
