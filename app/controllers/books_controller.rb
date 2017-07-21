@@ -20,6 +20,23 @@ class BooksController < ApplicationController
     @orders = book.orders
   end
 
+  def edit
+    book
+  end
+
+  def update
+    if book.update(book_params)
+      redirect_to book_path(book), info: "Book updated"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    book.destroy
+    redirect_to root_path, danger: "Book deleted"
+  end
+
   private
 
   def book_params
