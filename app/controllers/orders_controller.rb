@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
     if book.ordered?
       redirect_to book_path(book), danger: "You can't order this book. It's already ordered!"
     else
-      book.orders.create(user: User.first)
+      book.orders.create(user: current_user)
       redirect_to book_path(book), success: "Book was successfuly ordered"
     end
   end

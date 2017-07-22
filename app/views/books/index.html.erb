@@ -1,6 +1,8 @@
 <h1>Indeks ksiazek</h1>
 
-<%= link_to 'Dodaj książkę', new_book_path, class: 'btn btn-default btn-sm' %>
+<% if is_admin %>
+  <%= link_to 'Dodaj książkę', new_book_path, class: 'btn btn-default btn-sm' %>
+<% end %>
 
 <table class="table">
   <thead>
