@@ -21,6 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 # 
 gem 'faker', '~> 1.8', '>= 1.8.4'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'omniauth-google-oauth2', '~> 0.5.1'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
 gem 'pry'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
