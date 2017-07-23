@@ -10,7 +10,7 @@
           <% if @book.ordered? %>
             <p><%= link_to "Return", book_return_path(@book), method: :put, class: "btn btn-warning btn-block" %></p>
           <% else %>
-            <p><%= link_to "Order", book_orders_path(@book), method: :post, class: "btn btn-success btn-block" %></p>
+            <p><%= link_to "Borrow", book_orders_path(@book), method: :post, class: "btn btn-success btn-block" %></p>
           <% end %>
           <% if is_admin %>
             <p><%= link_to "Edit", edit_book_path, class: "btn btn-primary btn-block" %></p>
@@ -19,7 +19,7 @@
         <% end %>
       </div>
       <div class="col-md-4">
-        <h1>Miejsce na zdjecie</h1>
+        <%= image_tag @book.image.url(:large), class: "img-rounded" %>
       </div>
     </div>
   </div>
