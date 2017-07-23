@@ -1,25 +1,15 @@
-# README
+This is a Library application.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You can:
+- borrow books as a user,
+- edit and destroy books as an admin,
+- check borrowing history
 
-Things you may want to cover:
+Gems used: faker, bootstrap-sass, omniauth-google-oauth2, paperclip
 
-* Ruby version
+Important. After first login via google set admin role for user in console:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-#library
+rails c
+u = User.first
+u.admin = true
+u.save

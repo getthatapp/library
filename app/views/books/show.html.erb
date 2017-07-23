@@ -39,7 +39,7 @@
       <% @orders.each do |order| %>
         <tr>
           <td><%= order.user.name %></td>
-          <td><%= order.created_at %></td>
+          <td><%= order.created_at.strftime("%d-%m-%Y %H:%M") %></td>
           <td><%= order.returned_at || "-" %></td>
         </tr>
       <% end %>
